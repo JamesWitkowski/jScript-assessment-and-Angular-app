@@ -1,0 +1,34 @@
+<html ng-app="friday">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+<body ng-controller="FilmController">
+    {{2 + 2}}
+    <div>
+        <ul class="list-group">
+            <li class="list-group-item-default" ng-repeat="name in films">
+                <h3>{{name.name}} - {{name.year}} <span ng-click="removeFilm($index)">*</span></h3>
+           
+            </li>
+        </ul>
+    </div>
+    
+    <div class="form">
+        
+        <div class="form-group"><label for="title of movie">Film Name:</label>
+            <input class="form-control" type="text" ng-model="newFilm.name" placeholder="Name of film" />
+        </div>
+        <div class="form-group"><label for="release year">Release Year:</label>
+            <input class="form-control" type="text" ng-model="newFilm.year" placeholder="Year of release"/>
+        </div>
+        <button ng-click="addFilm()">Add Film</button>    
+    </div>
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.2/angular.min.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/components/films/film-controller.js"></script>
+</body>
+</html>
